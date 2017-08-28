@@ -1,0 +1,11 @@
+name: Employment
+source:
+  - prof: Junior Front-end Developer
+    place: Deloitte Digital
+    time: July 2017 to Present
+    description: Currently completing an IBL placement at Deloitte, acting as a Front-end Developer.
+
+  - prof: Junior Software Developer
+    place: Monash University eSolutions
+    time: December 2016 to July 2017
+    description: Worked with a team on the monPlan project. monPlan is a student developed webapp designed to assist students in planning the units they want to take during their course. Project work mainly involves javascript programming using react, as well as backend work to scrape data and create the API.

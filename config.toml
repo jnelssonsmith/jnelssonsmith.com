@@ -1,0 +1,56 @@
+baseurl = "http://joshuaxavier.io/"
+languageCode = "en-US"
+title = "Josh Nelsson-Smith"
+# Enable comments by entering your Disqus shortname
+disqusShortname = "joshuaxavier-io"
+# Enable Google Analytics by entering your tracking code
+googleAnalytics = ""
+theme = "hugo-sustain-vitae"
+layoutdir = "layouts"
+publishdir = "public"
+
+[permalinks]
+  post = "/:year/:month/:day/:slug"
+
+[params]
+  avatar = "profile.png"
+  author = "Josh Nelsson-Smith"
+  description = "Describe your website"
+  title = "Josh Nelsson-Smith"
+  email = "j.nelssonsmith@gmail.com"
+  email_full = "mailto:j.nelssonsmith@gmail.com"
+  website = "joshuaxavier.io"
+  website_full = "http://joshuaxavier.io/"
+  github = "trending"
+  twitter = "twitter"
+  city = "Melbourne"
+  country = "Australia"
+
+  # Custom assets can be linked with their paths relative to static/
+  custom_css = []
+  custom_js  = []
+
+[params.social]
+  Github        = "Joshua-Xavier"
+  Email         = "j.nelssonsmith@gmail.com"
+  Twitter       = "JoshuaXavier__"
+  LinkedIn      = "joshua-nelsson-smith-218736106"
+
+## Main Menu
+[[menu.main]]
+  name = "blog"
+  weight = 100
+  identifier = "blog"
+  url = "/blog/"
+[[menu.main]]
+  name = "projects"
+  identifier = "projects"
+  weight = 200
+  url = "/projects/"
+[[menu.main]]
+  name = "resume"
+  identifier = "resume"
+  weight = 300
+  url = "/resume/"
+
+

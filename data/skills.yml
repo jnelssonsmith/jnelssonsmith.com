@@ -1,0 +1,11 @@
+name: Skills
+title: 
+source:
+  - name: [React, Redux, ES6, Javascript]
+    stars: 5
+
+  - name: [HTML/CSS3, Node, Git]
+    stars: 4
+
+  - name: [Java, Python, C]
+    stars: 3

@@ -1,0 +1,35 @@
+<header class="four columns">
+  <h3>Josh</h3>
+  <h3>Nelsson-Smith</h3>
+  <p>
+    <a href="tel:{{ .Site.Params.tel_full }}">{{ .Site.Params.tel }}</a>
+  </p>
+  <address>
+    <a href="{{ .Site.Params.google_maps }}">
+      {{ .Site.Params.city }}<br/>
+      {{ .Site.Params.country }}
+    </a>
+  </address>
+  <p>
+    <a href="{{ .Site.Params.website_full }}">{{ .Site.Params.website }}</a><br/>
+  </p>
+  <p>
+    <a href="{{ .Site.Params.email_full }}">{{ .Site.Params.email }}</a>
+    <br />
+    <div class="social-container">
+        <div class="social-item">
+            <a href="http://github.com/{{ .Site.Params.Social.github }}"><i class="fa fa-github"></i></a>
+        </div>
+        <div class="social-item">
+            <a href="http://twitter.com/{{ .Site.Params.Social.twitter }}"><i class="fa fa-twitter"></i></a>
+        </div>
+        <div class="social-item">
+            <a href="http://linkedin.com/in/{{ .Site.Params.Social.LinkedIn }}"><i class="fa fa-linkedin"></i></a>
+        </div>
+        <div class="social-item">
+            <a href="mailto:{{ .Site.Params.Social.Email }}"><i class="fa fa-envelope"></i></a>
+        </div>
+    </div>
+    <br />
+  </p>
+</header>
