@@ -1,11 +1,21 @@
 name: Employment
 source:
-  - prof: Junior Front-end Developer
+  - prof: Team Lead | MonPlan
+    place: Monash University
+    time: March 2018 - Present
+    description: 
+  
+  - prof: Junior Front-End Developer (Contractor)
     place: Deloitte Digital
-    time: July 2017 to Present
+    time: December 2017 - March 2018
+    description: Contracted for Deloitte Digital on a project for a major NSW healthcare/insurance organisation. During this project I helped convert an existing portal to use more modern technologies (React and MobX) and extend its functionality.
+  
+  - prof: Front-End Development Intern
+    place: Deloitte Digital
+    time: July 2017 to December 2017
     description: Currently completing an IBL placement at Deloitte, acting as a Front-end Developer.
 
   - prof: Junior Software Developer
     place: Monash University eSolutions
     time: December 2016 to July 2017
-    description: Worked with a team on the monPlan project. monPlan is a student developed webapp designed to assist students in planning the units they want to take during their course. Project work mainly involves javascript programming using react, as well as backend work to scrape data and create the API.
+    description: Worked as part of a small student team focused on re-imagining how course planning and related problems are handled by universities. Work involved rapidly prototyping and iterating on a React + Redux webapp that eventually was split into multiple successful projects still in development today.

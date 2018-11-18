@@ -1,11 +1,6 @@
 name: Projects
 source:
   - icon: fa fa-globe
-    title: monPlan
+    title: MonPlan
     link: http://monplan.apps.monash.edu/
-    description: Ei viderer tacimates pro, quem assum ea nam. Veritus omnesque eam te. Et natum mucius tamquam vel, ea dolorem volumus deterruisset nec. Graeci mentitum sea an, eu prima elaboraret est.
-
-  - icon: fa fa-globe
-    title: Future You
-    link: https://myfuture-prod.appspot.com/
-    description: Ei viderer tacimates pro, quem assum ea nam. Veritus omnesque eam te. Et natum mucius tamquam vel, ea dolorem volumus deterruisset nec. Graeci mentitum sea an, eu prima elaboraret est.
+    description: An application that digitises the course planning processes at Monash University.
