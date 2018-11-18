@@ -16,3 +16,9 @@ rm -rf ../jnelssonsmith.github.io/projects
 rm ../jnelssonsmith.github.io/sitemap.xml
 
 cp -a ./public/. ../jnelssonsmith.github.io/
+
+
+cd ../jnelssonsmith.github.io
+git add .
+git commit -m "updating site"
+git push
