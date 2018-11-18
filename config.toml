@@ -1,4 +1,4 @@
-baseurl = "http://joshuaxavier.io/"
+baseurl = "https://jnelssonsmith.com/"
 languageCode = "en-US"
 title = "Josh Nelsson-Smith"
 # Enable comments by entering your Disqus shortname
@@ -19,8 +19,8 @@ publishdir = "public"
   title = "Josh Nelsson-Smith"
   email = "j.nelssonsmith@gmail.com"
   email_full = "mailto:j.nelssonsmith@gmail.com"
-  website = "joshuaxavier.io"
-  website_full = "http://joshuaxavier.io/"
+  website = "jnelssonsmith.com"
+  website_full = "https://jnelssonsmith.com/"
   github = "trending"
   twitter = "twitter"
   city = "Melbourne"
@@ -31,10 +31,10 @@ publishdir = "public"
   custom_js  = []
 
 [params.social]
-  Github        = "Joshua-Xavier"
+  Github        = "jnelssonsmith"
   Email         = "j.nelssonsmith@gmail.com"
-  Twitter       = "JoshuaXavier__"
-  LinkedIn      = "joshua-nelsson-smith-218736106"
+  Twitter       = "jnelssonsmith"
+  LinkedIn      = "jnelssonsmith"
 
 ## Main Menu
 [[menu.main]]
