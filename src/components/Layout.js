@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
+import Nav from './Nav';
+
 class Layout extends React.Component {
   render() {
     const { location, title, children } = this.props
@@ -9,34 +11,19 @@ class Layout extends React.Component {
 
     if (location.pathname === rootPath) {
       header = (
-        <h1>
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            {title}
-          </Link>
-        </h1>
+        <Nav />
       )
     } else {
       header = (
-        <h3>
-          <Link
-            to={'/'}
-          >
-            {title}
-          </Link>
-        </h3>
+         <Nav />
       )
     }
     return (
       <div>
         {header}
-        {children}
+        <div className="content">
+          {children}
+        </div>
       </div>
     )
   }
