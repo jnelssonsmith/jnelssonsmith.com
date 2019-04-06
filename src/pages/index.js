@@ -8,6 +8,7 @@ import '../assets/syntax-highlighting.css';
 
 import Bio from '../components/Bio'
 import Layout from '../components/Layout'
+import BlogPosts from '../components/BlogPosts'
 
 class BlogIndex extends React.Component {
   render() {
@@ -16,6 +17,7 @@ class BlogIndex extends React.Component {
       this,
       'props.data.site.siteMetadata.description'
     )
+    const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -25,9 +27,14 @@ class BlogIndex extends React.Component {
           title={siteTitle}
         />
         <Bio />
-        <div style={{height: '100vh'}}>
-          <p>hello</p>
-        </div>
+        <div style={{marginBottom: '100px'}}></div>
+        <hr />
+        <h2>Latest Blog Posts</h2>
+        <BlogPosts posts={posts} numberOfPosts={3} />
+        <a href="/blog">See all posts</a>
+        <div style={{marginBottom: '100px'}}></div>
+        <hr />
+        <h2>Projects</h2>
       </Layout>
     )
   }

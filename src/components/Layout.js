@@ -19,7 +19,7 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div>
+      <div className="app">
         {header}
         <div className="content">
           {children}

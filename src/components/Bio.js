@@ -1,10 +1,14 @@
 import React from 'react'
-import profilePic from './profile-pic.jpg'
+import Links from './Links'
 
 class Bio extends React.Component {
   render() {
     return (
-     <p>Hello world</p>
+      <div className="intro">
+        <p>Hi, I'm <b>Josh</b></p>
+        <p>I'm a <b>Software Engineer</b> currently based in <b>Melbourne, Australia</b></p>
+        <Links />
+      </div>
     )
   }
 }
