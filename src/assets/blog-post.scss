@@ -11,6 +11,18 @@ body {
   font-weight: 400;
   font-kerning: normal;
   margin: 0;
+  background-color: white;
+  transition: color 0.2s ease-out 0s, background 0.2s ease-out 0s;
+
+  &.dark {
+    color: hsla(0,0%,100%,0.88);
+    background-color: #1a1a1a;
+  }
+}
+
+.app {
+  position: relative;
+  z-index: 1;
 }
 
 blockquote {
@@ -26,6 +38,8 @@ pre {
   overflow: auto;
   padding: 1em;
 }
+
+
 
 .navigation-bar {
   display: flex;
@@ -57,6 +71,10 @@ pre {
 
 .nav-link:not(.first):not(.menu) {
   border-left: 1px solid black;
+
+  .dark & {
+    border-left: 1px solid #a0a0a0;
+  }
 }
 
 .nav-link:visited {
@@ -67,6 +85,10 @@ pre {
 
 .nav-link-container {
   display: flex;
+
+  .dark & {
+    color: #a0a0a0
+  }
 }
 
 .home-link {
@@ -110,13 +132,22 @@ pre {
     color: $link-color-highlight;
   }
 
-  &--light {
+  .dark & {
+    color: #FFF
+  }
+
+  &--light,
+  .dark &--light {
     color: $link-color-light;
 
     &:hover, &:focus {
       color: $link-color-light-hightlight;
     }
   }
+}
+
+.bio-text {
+  padding-right: 10px;
 }
 
 .fade-in-after {
@@ -207,6 +238,7 @@ pre {
     color: black;
   }
 
+  .dark &,
   &--light {
     @include brush-stroke-bg($brush-stroke-light);
     &:hover, &focus {
@@ -225,6 +257,7 @@ pre {
   align-items: center;
   text-decoration: inherit;
 
+  .dark &,
   &--light {
     color: black;
   }
@@ -234,11 +267,19 @@ pre {
 .bio-brush-stroke {
   color: white;
 
+  .dark & {
+    color: black;
+  }
+
   &::after {
     content: '';
     @include brush-stroke-bg($brush-stroke-dark);
     position: absolute;
     z-index: -1;
+
+    .dark & {
+      @include brush-stroke-bg(#FFF);
+    }
   }
 
   &--josh {
@@ -361,6 +402,10 @@ footer {
   padding: 20px 50px;
   color: white;
   position: relative;
+
+  .dark & {
+    color: black;
+  }
 }
 
 .header--brush-stroke {
@@ -372,17 +417,26 @@ footer {
   content: '';
   height: calc(100% + 10px);
   width: calc(100% + 34px);
-  background: url('./brush-stroke-black.svg') no-repeat;
+  @include brush-stroke-bg($brush-stroke-dark);
   position: absolute;
   background-size: calc(100% + 28px) calc(100% + 57px);
   z-index: -1;
   top: 0;
   background-position: right;
   left: 0;
+
+  .dark & {
+    @include brush-stroke-bg(#FFF);
+  }
 }
 
-#svg2 path {
-  fill: #fff;
+.blog-post-link {
+  color: $base-text-color;
+  font-weight: bold;
+
+  .dark & {
+    color: #FFF;
+  }
 }
 
 @media screen and (max-width: 725px) {

@@ -42,7 +42,7 @@ class BlogIndex extends React.Component {
             </span>
           </h2>
           <BlogPosts posts={posts} numberOfPosts={3} />
-          <a href="/blog">See all posts</a>
+          <a className="blog-post-link" href="/blog">See all posts</a>
           <div style={{marginBottom: '100px'}}></div>
           <hr />
           <h2 className="header--brush-stroke">

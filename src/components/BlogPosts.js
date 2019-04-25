@@ -24,7 +24,7 @@ class BlogPosts extends React.Component {
         return (
           <div key={node.fields.slug}>
             <h3>
-              <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+              <Link class="blog-post-link" style={{ boxShadow: 'none' }} to={node.fields.slug}>
                 {title}
               </Link>
             </h3>

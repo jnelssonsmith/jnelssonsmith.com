@@ -3,6 +3,7 @@ import { Link } from 'gatsby'
 
 import Nav from './Nav';
 import Footer from './Footer';
+import DarkModeToggle from './DarkModeToggle';
 
 class Layout extends React.Component {
   constructor(props) {
@@ -15,6 +16,7 @@ class Layout extends React.Component {
     this.toggleNav = this.toggleNav.bind(this);
   }
 
+
   toggleNav() {
     this.setState(prevState => ({
       navOpen: !prevState.navOpen,
@@ -22,9 +24,10 @@ class Layout extends React.Component {
     }));
   }
 
+
   render() {
     const { children, location, title, disableAnimations} = this.props
-    const { navOpen, first } = this.state;
+    const { navOpen, first, darkMode } = this.state;
 
     const rootPath = `${__PATH_PREFIX__}/`
     const isHome = location.pathname === rootPath;
@@ -45,6 +48,7 @@ class Layout extends React.Component {
       <div className="app">
         <Nav animateIn={isHome && !disableAnimations} toggleNav={this.toggleNav} isOpen={navOpen} />
         <div className={navStyle} />
+        <DarkModeToggle />
         <div className="content" style={contentStyles}>
           {children}
         </div>
