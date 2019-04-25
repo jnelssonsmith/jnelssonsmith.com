@@ -2,19 +2,34 @@ import React from 'react'
 
 class Nav extends React.Component {
   render() {
+    const { isOpen, toggleNav, animateIn } = this.props; 
     return (
-      <nav className="navigation-bar">
-        <div>
-          <a className="home-link" href="/">Josh Nelsson-Smith</a>
-          <a className="home-link mobile-only" href="/">Josh N-S</a>
-        </div>
-        <div className="nav-link-container">
-          <a className="nav-link first" href="/blog">Blog</a>
-          <a className="nav-link" href="/projects">Projects</a>
-          <a className="nav-link menu mobile-only" href="javascript:void(0);">
-            <i className="fa fa-bars"></i>
-          </a>
-        </div>
+      <nav className={`navigation-bar${animateIn ? ' fade-in--nav' : ''}`}>
+        {isOpen
+          ? (
+            <div className="menu-container">
+                <a className="menu-link" href="/blog">Blog</a>
+                <a className="menu-link" href="/projects">Projects</a>
+                <button className="menu-link menu-link--btn" onClick={toggleNav}>Close</button>
+            </div>
+          )
+          : (
+            <React.Fragment>
+              <a href="/" className="home-container brush-stroke-logo">
+                <span className="home-link">Josh Nelsson-Smith</span>
+                <span className="home-link mobile-only">Josh N-S</span>
+              </a>
+              <div className="nav-link-container">
+                <a className="nav-link first" href="/blog">Blog</a>
+                <a className="nav-link" href="/projects">Projects</a>
+                <a className="nav-link menu mobile-only" onClick={toggleNav}>
+                  <i className="fa fa-bars"></i>
+                </a>
+              </div>
+            </React.Fragment>
+          )
+        }
+        
       </nav>
     )
   }

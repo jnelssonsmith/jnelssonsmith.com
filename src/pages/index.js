@@ -3,7 +3,7 @@ import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
-import '../assets/blog-post.css';
+import '../assets/blog-post.scss';
 import '../assets/syntax-highlighting.css';
 
 import Bio from '../components/Bio'
@@ -12,6 +12,11 @@ import BlogPosts from '../components/BlogPosts'
 
 class BlogIndex extends React.Component {
   render() {
+    const disableAnimations = localStorage.getItem('disable-animations');
+    if (!disableAnimations) {
+      localStorage.setItem('disable-animations', true);
+    }
+
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const siteDescription = get(
       this,
@@ -20,21 +25,34 @@ class BlogIndex extends React.Component {
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
 
     return (
-      <Layout location={this.props.location} title={siteTitle}>
+      <Layout disableAnimations={disableAnimations} location={this.props.location} title={siteTitle}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <Bio />
-        <div style={{marginBottom: '100px'}}></div>
-        <hr />
-        <h2>Latest Blog Posts</h2>
-        <BlogPosts posts={posts} numberOfPosts={3} />
-        <a href="/blog">See all posts</a>
-        <div style={{marginBottom: '100px'}}></div>
-        <hr />
-        <h2>Projects</h2>
+        <Bio disableAnimations={disableAnimations} />
+        <div className={!disableAnimations && "fade-in--nav"}>
+          <hr />
+          <h2 className="header--brush-stroke">
+            <span className="brush-stroke-wrapper">
+              <span className="brush-stroke-test">
+                Latest Blog Posts
+              </span>
+            </span>
+          </h2>
+          <BlogPosts posts={posts} numberOfPosts={3} />
+          <a href="/blog">See all posts</a>
+          <div style={{marginBottom: '100px'}}></div>
+          <hr />
+          <h2 className="header--brush-stroke">
+            <span className="brush-stroke-wrapper">
+              <span className="brush-stroke-test">
+                Projects
+              </span>
+            </span>
+          </h2>
+        </div>
       </Layout>
     )
   }
