@@ -73,7 +73,7 @@ pre {
   border-left: 1px solid black;
 
   .dark & {
-    border-left: 1px solid #a0a0a0;
+    border-left: 1px solid #FFF;
   }
 }
 
@@ -87,7 +87,7 @@ pre {
   display: flex;
 
   .dark & {
-    color: #a0a0a0
+    color: #FFF
   }
 }
 
@@ -238,7 +238,14 @@ pre {
     color: black;
   }
 
-  .dark &,
+  .dark & {
+    @include brush-stroke-bg(#FFF);
+    &:hover, &focus {
+      @include brush-stroke-bg(#FFF);
+    }
+  }
+
+  .dark &--light,
   &--light {
     @include brush-stroke-bg($brush-stroke-light);
     &:hover, &focus {
@@ -431,12 +438,32 @@ footer {
 }
 
 .blog-post-link {
+  padding-bottom: 4px;
   color: $base-text-color;
   font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, rgba(0, 0, 0, 1) 10%);
+  background-repeat: no-repeat;
+  background-size: 0% 100%;
+  transition: 0.1s linear all;
+
+  &:hover {
+    background-size: 100% 100%;
+    border-bottom-color: #000;
+  }
 
   .dark & {
     color: #FFF;
+    border-bottom: 1px solid #FFF;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 90%, rgba(255, 255, 255, 1) 10%);
+
+    &:hover {
+      border-bottom-color: #FFF;
+    }
   }
+
+  
 }
 
 @media screen and (max-width: 725px) {
