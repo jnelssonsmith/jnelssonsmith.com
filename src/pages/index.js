@@ -14,7 +14,7 @@ class BlogIndex extends React.Component {
   render() {
     const disableAnimations = localStorage.getItem('disable-animations');
     if (!disableAnimations) {
-      localStorage.setItem('disable-animations', true);
+      localStorage.setItem('disable-animations', '.');
     }
 
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')

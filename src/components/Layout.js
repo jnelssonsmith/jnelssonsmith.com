@@ -11,6 +11,7 @@ class Layout extends React.Component {
     this.state = {
       navOpen: false,
       first: true,
+      initialTheme: localStorage.getItem('theme') || 'light',
     }
 
     this.toggleNav = this.toggleNav.bind(this);
@@ -27,7 +28,7 @@ class Layout extends React.Component {
 
   render() {
     const { children, location, title, disableAnimations} = this.props
-    const { navOpen, first, darkMode } = this.state;
+    const { navOpen, first, initialTheme } = this.state;
 
     const rootPath = `${__PATH_PREFIX__}/`
     const isHome = location.pathname === rootPath;
@@ -46,9 +47,8 @@ class Layout extends React.Component {
 
     return (
       <div className="app">
-        <Nav animateIn={isHome && !disableAnimations} toggleNav={this.toggleNav} isOpen={navOpen} />
+        <Nav animateIn={isHome && !disableAnimations} toggleNav={this.toggleNav} isOpen={navOpen} initialTheme={initialTheme} />
         <div className={navStyle} />
-        <DarkModeToggle />
         <div className="content" style={contentStyles}>
           {children}
         </div>

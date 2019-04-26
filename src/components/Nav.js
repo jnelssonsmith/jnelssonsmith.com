@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
+import DarkModeToggle from './DarkModeToggle';
 
 class Nav extends React.Component {
   render() {
-    const { isOpen, toggleNav, animateIn } = this.props; 
+    const { isOpen, toggleNav, animateIn, initialTheme } = this.props; 
     return (
       <nav className={`navigation-bar${animateIn ? ' fade-in--nav' : ''}`}>
         {isOpen
@@ -20,6 +21,9 @@ class Nav extends React.Component {
                 <span className="home-link mobile-only">Josh N-S</span>
               </a>
               <div className="nav-link-container">
+                <div className="toggle-container">
+                  <DarkModeToggle initialTheme={initialTheme} />
+                </div>
                 <a className="nav-link first" href="/blog">Blog</a>
                 <a className="nav-link" href="/projects">Projects</a>
                 <a className="nav-link menu mobile-only" onClick={toggleNav}>
