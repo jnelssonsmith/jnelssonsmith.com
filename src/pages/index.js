@@ -12,9 +12,9 @@ import BlogPosts from '../components/BlogPosts'
 
 class BlogIndex extends React.Component {
   render() {
-    const disableAnimations = localStorage.getItem('disable-animations');
+    const disableAnimations = sessionStorage.getItem('disable-animations');
     if (!disableAnimations) {
-      localStorage.setItem('disable-animations', '.');
+      sessionStorage.setItem('disable-animations', '.');
     }
 
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
