@@ -14,15 +14,23 @@ class Layout extends React.Component {
       initialTheme: localStorage.getItem('theme') || 'light',
     }
 
-    this.toggleNav = this.toggleNav.bind(this);
+    this.handleOpen = this.handleOpen.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
-
-  toggleNav() {
-    this.setState(prevState => ({
-      navOpen: !prevState.navOpen,
+  handleOpen() {
+    window.__scrollLock();
+    this.setState({
+      navOpen: true,
       first: false,
-    }));
+    });
+  }
+
+  handleClose() {
+    window.__scrollUnlock();
+    this.setState({
+      navOpen: false,
+    });
   }
 
 
@@ -47,7 +55,7 @@ class Layout extends React.Component {
 
     return (
       <div className="app">
-        <Nav animateIn={isHome && !disableAnimations} toggleNav={this.toggleNav} isOpen={navOpen} initialTheme={initialTheme} />
+        <Nav animateIn={isHome && !disableAnimations} onClose={this.handleClose} onOpen={this.handleOpen} isOpen={navOpen} initialTheme={initialTheme} />
         <div className={navStyle} />
         <div className="content" style={contentStyles}>
           {children}

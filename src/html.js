@@ -41,6 +41,15 @@ export default class HTML extends React.Component {
                     localStorage.setItem('theme', newTheme);
                   } catch (err) {}
                 }
+
+                window.__scrollLock = function() {
+                  document.body.classList.add('scroll-lock')
+                }
+
+                window.__scrollUnlock = function() {
+                  document.body.classList.remove('scroll-lock')
+                }
+
                 var darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
                 darkQuery.addListener(function(e) {
                   window.__setPreferredTheme(e.matches ? 'dark' : 'light')

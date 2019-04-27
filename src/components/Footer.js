@@ -9,7 +9,7 @@ class Footer extends React.Component {
       <footer>
         <div className="footer-content__container">
           <div className="links-container">
-            <a href="/" className="home-container brush-stroke-logo brush-stroke-logo--light home-container--light">
+            <a href="/" className="no-underline home-container brush-stroke-logo brush-stroke-logo--light home-container--light">
               <span className="home-link">Josh Nelsson-Smith</span>
               <span className="home-link mobile-only">Josh N-S</span>
             </a>
