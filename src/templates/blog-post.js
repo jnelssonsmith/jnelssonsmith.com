@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { Link,graphql } from 'gatsby'
 import get from 'lodash/get'
 import '../assets/blog-post.scss';
-import '../assets/syntax-highlighting.css';
+import '../assets/syntax-highlighting.scss';
 
 
 import Bio from '../components/Bio'
